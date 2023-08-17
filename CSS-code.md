@@ -1,0 +1,79 @@
+# Code-modules
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: #010101; */
+  font-family: "Ubuntu", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  height: 90px;
+  background-color: #1a1a1a;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  color: 0aa5ff;
+  font-size: 22px;
+}
+
+.navbar .logo a {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-left: 12px;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  border-right: 1px solid #999999;
+  padding-inline: 8px 16px;
+}
+
+.menu-btn {
+  font-size: 32px;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.menu-links a:hover {
+  color: white;
+}
+
+.log-in {
+  font-weight: 500px;
+  padding: 12px 22px;
+  background-color: transparent;
+  color: #999999;
+  border-radius: 10px;
+  border: 2px solid #0aa5ff;
+  transition: 0.2s;
+}
+
+.log-in:hover {
+  background-color: #0aa5ff;
+  color: white;
+}

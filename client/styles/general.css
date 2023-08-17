@@ -1,0 +1,61 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: ;
+  margin: ;
+  padding: ;
+  /* background-color: ; */
+  font-family: ;
+}
+
+a {
+  text-decoration: ;
+}
+
+
+/*https: //stackoverflow.com/a/20297912 + https: //css-tricks.com/snippets/css/media-queries-for-standard-devices/*
+/* SMARTPHONES PORTRAIT */
+@media only screen and (max-width: 479px) {
+  
+}
+
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) and (max-width: 767px) and (orientation : landscape) {}
+
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {}
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) and (max-device-width : 1823px) {}
+
+/* LARGE SCREENS */
+@media only screen and (min-width: 1824px) {}
+
+@media (max-width: 40rem) {}
+
+@media (prefers-color-scheme: light) {
+  .navbar {
+    background-color: black;
+  }
+
+  .navbar .navbar-logo {
+    color: beige;
+  }
+
+  .navbar-login {
+    border-left: 1px solid beige;
+  }
+
+  .navbar .login {
+    background-color: black;
+    color: beige;
+    border: 2px solid beige;
+  }
+
+  .navbar .login:hover {
+  color: beige;
+  }
+}
