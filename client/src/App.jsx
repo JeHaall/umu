@@ -1,26 +1,24 @@
-import { useState } from 'react'
-
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { ReactComponent as AppLogo } from './assets/AfiApiApp.svg';
 import '../styles/App.css'
+import Navbar from '../components/navbar'
+import { Home, About, Contact, Services } from '../pages';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      {/*
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className = "logo react" alt="React logo" />
-        </a>
-      </div>
-      */}
 
-      <div>
+      <div className="App">
+        <Navbar />
+
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/About' element={<About />}/>
+          <Route path='/Contact' element={<Contact />}/>
+          <Route path='/Services' element={<Services />}/>
+        </Routes>
         <a href="https://react.dev">
           <AppLogo className="appLogo" />
         </a>

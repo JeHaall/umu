@@ -1,64 +1,42 @@
 import React, {useState} from 'react';
 import { useEffect } from 'react';
+import { Link, NavLink } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
-import '../styles/general.css'
 
-function useHideOnScroll(ref) {
-  useEffect(() => {
-    const handleScroll = () => {
-      if (document.nav.scrollTop > 20 ) {
-        ref.current.style.top = '0';
-      } else {
-        ref.current.style.top = '-50px';
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [ref]);
-}
+import '../styles/Navbar.css'
 
 function navbar() {
-  const navbarRef = React.useRef(null);
-  useHideOnScroll(navbarRef);
-
-  const [active, setActive] = useState("nav_menu");
-  const [toggleIcon, setToggleIcon] = useState("nav_toggler");
+  const [menuOpen, setMenuOpen] = useState(false);
   
-  const navToggle = () => {
-    active === 'nav_menu' 
-      ? setActive("nav_menu nav_active") 
-      : setActive("nav_menu");
-
-    //TogglerIcon
-    toggleIcon === "nav_toggler" 
-    ? setToggleIcon("nav_toggler toggle")
-    :setToggleIcon("nav_toggler");
+  var menu = document.getElementsByClassName("menu");
+  menu.onClick = function(){
+    menu.classList.toggle("openmenu");
   }
-
+  
   return (
     <>
       <nav>
-        <div className="navbar-logo">
-          <a href="#"><FontAwesomeIcon icon={faHouse} size="2xl" /></a>
+        <Link to="/" className='title'>Home</Link>
+        
+        <div className="menu" id={menuOpen ? "menuOpen" : "menu"} onClick={() => setMenuOpen(!menuOpen)}>
+          <span className='line-1'></span>
+          <span className='line-2'></span>
+          <span className='line-3'></span>
         </div>
         
-        <ul className={active}>
-          <li className="nav_item"><a href="#" className="nav_link">*Applogo into navbar*</a></li>
-          <li className="nav_item"><a href="#" className="nav_link">How it works</a></li>
+        <ul className={menuOpen ? "open" : ""}>
+          <li>
+            <NavLink to="/About">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Services">Services</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact">Contact</NavLink>
+          </li>
         </ul>
-
-        <div className="navbar-login">
-          <button className="login">Login</button>
-        </div>
-
-        <div onClick={navToggle} className={toggleIcon}>
-          <div className = "line1"></div>
-          <div className = "line2"></div>
-          <div className = "line3"></div>
-        </div>
       </nav>
     </>
   )

@@ -1,0 +1,121 @@
+.active {
+    background-color: #1d4ed8;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f172a;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+   list-style: none; 
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+nav ul li a:not(.active):hover {
+    background-color:#172554 ;
+}
+
+nav .menu {
+    width: 2.25rem;
+    height: 2rem;
+    margin: 8px;
+    background-image: linear-gradient(to right, #e91e63, #f44336);
+    border-radius: 2px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu span {
+    height: 2px;
+    width: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s, width 0.5s;
+}
+
+.menu .line-1 {
+    transform: translate(-50%, -10px);
+}
+/*.menu .line-2 {}*/
+.menu .line-3 {
+    transform: translate(-50%, 8px);
+}
+/*
+*/
+#menuOpen .line-1 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+#menuOpen .line-2 {
+    width: 0;
+}
+#menuOpen .line-3 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media (max-width: 480px) {
+    nav .menu {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    nav ul.open {
+        display: contents;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+}
