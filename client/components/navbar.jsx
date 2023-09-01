@@ -18,7 +18,9 @@ function navbar() {
   return (
     <>
       <nav>
-        <Link to="/" className='title'>Home</Link>
+        <Link to="/" className='home'>
+          <FontAwesomeIcon icon={faHouse} size="xl" />
+        </Link>
         
         <div className="menu" id={menuOpen ? "menuOpen" : "menu"} onClick={() => setMenuOpen(!menuOpen)}>
           <span className='line-1'></span>
@@ -35,6 +37,11 @@ function navbar() {
           </li>
           <li>
             <NavLink to="/Contact">Contact</NavLink>
+          </li>
+          <li>
+            <div className="login">
+              <button className="loginBtn">Login</button>
+            </div>
           </li>
         </ul>
       </nav>
